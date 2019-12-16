@@ -1,4 +1,4 @@
-FROM openjdk
+FROM ubuntu
 
 # Defining default Java and Maven version
 ARG JAVA_VERSION="8.0.232-open"
