@@ -1,4 +1,3 @@
-
 pipeline {
     agent any
     environment {
@@ -53,7 +52,7 @@ pipeline {
             agent {
                 dockerfile {
                     filename DOCKERFILE
-                    additionalBuildArgs "--build-arg JAVA_VERSION=8.0.232-open"
+                    additionalBuildArgs "--build-arg JAVA_VERSION=11.0.5-open"
                     args '-v $HOME/.m2/repository:/home/jenkins/.m2/repository:rw,z'
                 }
             }
