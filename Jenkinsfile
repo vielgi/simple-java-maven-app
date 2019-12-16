@@ -12,6 +12,15 @@ pipeline {
             }
 
             parallel {
+
+                stage('openjdk') {
+                    agent {
+                        docker { image 'openjdk' }
+                    }
+                    steps {
+                        sh "${MVN_COMMAND} -P jdk13"
+                    }
+                }
                 stage("openjdk-8.0.232") {
                     agent {
                         dockerfile {
