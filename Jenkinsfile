@@ -22,7 +22,9 @@ pipeline {
                     }
                 }*/
                 stage('custom') {
-                    gitC()
+                    steps {
+                        gitC()
+                    }
                 }
                 stage("openjdk-8.0.232") {
                     agent {
