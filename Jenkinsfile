@@ -72,7 +72,7 @@ pipeline {
                 }
             }
             steps {
-                sh "mvn -DskipTests install -P jdk8"
+                sh "mvn -DskipTests install -P jdk11"
             }
         }
     }
