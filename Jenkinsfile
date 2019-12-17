@@ -56,6 +56,12 @@ pipeline {
                 }
             }
         }
+        stage('Confirm') {
+            agent none
+            steps {
+                input(message: 'Confirm Installing', ok: "Yes, let's do it!")
+            }
+        }
 
         stage("Install") {
             agent {

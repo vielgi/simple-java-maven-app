@@ -1,0 +1,52 @@
+node {
+    /* Requires the Docker Pipeline plugin to be installed */
+    docker.image('node').inside {
+        stage('Test') {
+            sh 'uname -a'
+            //sh 'java -version'
+            sh 'pwd'
+            sh 'ls -al'
+            //sh 'apt-get update'
+            //sh 'apt-get install git -y'
+            //sh 'git clone https://github.com/jglick/simple-maven-project-with-tests.git'
+            input 'ok'
+        }
+    }
+    docker.image('ubuntu').inside {
+        stage('Test') {
+            sh 'uname -a'
+            //sh 'java -version'
+            sh 'pwd'
+            sh 'ls -al'
+            //sh 'apt-get update'
+            //sh 'apt-get install git -y'
+            //sh 'git clone https://github.com/jglick/simple-maven-project-with-tests.git'
+            input 'ok'
+        }
+    }
+    docker.image('openjdk').inside {
+        stage('OpenJDK') {
+            sh 'uname -a'
+            sh 'java -version'
+            sh 'pwd'
+            sh 'ls -al'
+            sh ''
+            //sh 'git clone https://github.com/jglick/simple-maven-project-with-tests.git'
+            input 'ok'
+        }
+    }
+    /*docker.image('alpine/git').inside {
+        stage('Alpine') {
+            try{sh 'uname -a'
+                //sh 'java -version'
+                sh 'pwd'
+                sh 'ls -al'
+                sh 'git clone https://github.com/jglick/simple-maven-project-with-tests.git'
+                input 'ok'
+            }
+            catch (e) {
+
+            }
+        }
+    }*/
+}
